@@ -11,7 +11,7 @@ Sebelum menjalankan proyek ini, pastikan Anda sudah menginstal:
 
 Jalankan perintah berikut untuk mengunduh proyek dari GitHub:
 ```
-git clone https://github.com/abdau88/jobsheet1.git
+git https://github.com/AuliaFitriNurAzizah/SI-Monitoring-Kehadiran-Mahasiswa.git
 
 cd repository-name
 ```
@@ -27,9 +27,9 @@ docker-compose up -d --build
 docker ps
 ```
 🎯 Akses Aplikasi
-- Backend (CodeIgniter): http://localhost:8000
-- Frontend (Laravel): http://localhost:3000
-- PHPMyAdmin (Opsional): http://localhost:8080
+- Backend (CodeIgniter): http://localhost:8080
+- Frontend (Laravel): http://localhost:8082
+- PHPMyAdmin (Opsional): http://localhost:8081
 
 🛠️ Konfigurasi Database
 - Host: database
@@ -52,3 +52,41 @@ Jika ingin menghentikan layanan, jalankan:
 ```
 docker-compose down
 ```
+
+Berikut ini adalah langkah untuk menyatukan backend (BE) dan frontend (FE) dalam satu repositori GitHub supaya lebih terorganisir.
+
+## 1. Monorepo — Satu repositori untuk FE dan BE
+- Buat satu repositori utama, yaitu SI-Monitoring-Kehadiran-Mahasiswa
+- Di dalamnya, buat dua folder: /frontend dan /backend
+- Masukkan kode frontend di folder /frontend, kode backend di folder /backend
+
+Clone repo FE dan BE secara terpisah dulu:
+```
+git clone https://github.com/gerinnr/FrontEnd-SiMon.git
+```
+```
+git clone https://github.com/NalindraDT/Simon-kehadiran.git
+```
+Pakai repo yang sudah ada untuk merepo
+```
+git clone https://github.com/AuliaFitriNurAzizah/SI-Monitoring-Kehadiran-Mahasiswa.git
+cd SI-Monitoring-Kehadiran-Mahasiswa
+```
+Copy isi repo FE ke folder /frontend di monorepo:
+```
+mkdir frontend
+cp -r ../FrontEnd-SiMon/* frontend/
+```
+Copy isi repo BE ke folder /backend di monorepo:
+```
+mkdir backend
+cp -r ../Simon-kehadiran/* backend/
+```
+Commit perubahan:
+```
+git add .
+git commit -m "Add frontend and backend as monorepo structure"
+git push origin main
+```
+
+
