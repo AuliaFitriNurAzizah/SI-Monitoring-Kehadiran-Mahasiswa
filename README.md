@@ -55,7 +55,7 @@ docker-compose down
 
 Berikut ini adalah langkah untuk menyatukan backend (BE) dan frontend (FE) dalam satu repositori GitHub supaya lebih terorganisir.
 
-## 1. Monorepo — Satu repositori untuk FE dan BE
+## Monorepo — Satu repositori untuk FE dan BE
 - Buat satu repositori utama, yaitu SI-Monitoring-Kehadiran-Mahasiswa
 - Di dalamnya, buat dua folder: /frontend dan /backend
 - Masukkan kode frontend di folder /frontend, kode backend di folder /backend
